@@ -21,4 +21,4 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 ## Bootloader
 
 To flash for the first time, you will need to short the reset and ground pins on the pro micro twice in quick succession.  
-Once flashed, the bootlaoder can be entered by holding `Enter`+`left macro key`, then pressing `numlock`.
+Once flashed, the bootlaoder can be entered by holding `numlock`, then pressing `Enter`+`M1` (the top-left most key).
