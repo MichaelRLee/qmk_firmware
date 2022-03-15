@@ -2,7 +2,7 @@
     "manufacturer": "finz",
     "keyboard_name": "leepad",
     "maintainer": "MichaelRLee",
-    "bootloader": "atmel-dfu",
+    "bootloader": "caterina",
     "diode_direction": "COL2ROW",
     "features": {
         "bootmagic_lite": true,
