@@ -11,6 +11,12 @@
 
 #define COMBO_COUNT 1
 
+#define SOFT_SERIAL_PIN D3
+#define MASTER_RIGHT
+#define SELECT_SOFT_SERIAL_SPEED 1
+#define SPLIT_LED_STATE_ENABLE
+#define SPLIT_LAYER_STATE_ENABLE
+
 /*
  * Feature disable options
  *  These options are also useful to firmware size reduction.
