@@ -5,7 +5,7 @@
 *A hot-swappable Pro Micro based numpad with macro keys.*
 
 * Keyboard Maintainer: [Michael Lee](https://github.com/MichaelRLee)
-* Hardware Supported: [PCB](https://github.com/MichaelRLee/Custom-Keyboard-PCB/tree/main/Numpad), Pro Micro/alternatives
+* Hardware Supported: [PCB](https://github.com/MichaelRLee/Custom-Keyboard-PCB/tree/Rev1/Numpad), Pro Micro/alternatives
 * Hardware Availability: Get it printed for yourself (open source, JLC gerber files included in PCB link)
 
 Make example for this keyboard (after setting up your build environment):
@@ -20,5 +20,9 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 
 ## Bootloader
 
-To flash for the first time, you will need to short the reset and ground pins on the pro micro twice in quick succession.  
-Once flashed, the bootlaoder can be entered by holding `numlock`, then pressing `Enter`+`M1` (the top-left most key).
+Enter the bootloader in 2 ways:
+
+* **Key combo**: hold `numlock`, then press `Enter`+`M1` (the top-left most key).
+* **Bootmagic reset**: Hold down `M1` and plug in the keyboard
+
+To flash a Pro Micro for the first time, you may need to short the reset and ground pins on the pro micro twice in quick succession.  

@@ -89,7 +89,7 @@ combo_t key_combos[COMBO_COUNT] = {
 };
 
 void extended_nulock(led_t led_state){
-    led_state.num_lock ? layer_off(1) : layer_on(1);
+    led_state.num_lock ? layer_off(_NLCK) : layer_on(_NLCK);
 }
 
 void keyboard_post_init_user(void) {
