@@ -1,7 +1,13 @@
 #include QMK_KEYBOARD_H
 
-#define _NUM LT(2, KC_NUM)
-#define _BTAB LSFT(KC_TAB)
+#define _BASE 0
+#define _NLCK 1
+#define _SHFT 2
+
+#define SFT_NUM LT(2, KC_NUM)
+#define BCK_TAB LSFT(KC_TAB)
+#define _RCK1   KC_ESC
+#define _RCK2   KC_EQL
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /*
@@ -19,9 +25,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * │ 0     │ . │   │
      * └───────┴───┴───┘
      */
-    [0] = LAYOUT_numpad_6x4(
+    [_BASE] = LAYOUT_numpad_6x4(
         KC_CIRC, KC_LPRN, KC_RPRN, KC_PERC,
-        _NUM,    KC_PSLS, KC_PAST, KC_PMNS,
+        SFT_NUM, KC_PSLS, KC_PAST, KC_PMNS,
         KC_P7,   KC_P8,   KC_P9,
         KC_P4,   KC_P5,   KC_P6,   KC_PPLS,
         KC_P1,   KC_P2,   KC_P3,
@@ -43,8 +49,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * │Insert │Del│   │
      * └───────┴───┘───┘
      */
-    [1] = LAYOUT_numpad_6x4(
-        KC_ESC,  KC_TAB,  _BTAB,   KC_BSPC,
+    [_NLCK] = LAYOUT_numpad_6x4(
+        KC_ESC,  KC_TAB,  BCK_TAB, KC_BSPC,
         _______, _______, _______, _______,
         _______, _______, _______,
         _______, _______, _______, _______,
@@ -56,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ┌───┬───┬───┬───┐
      * │Esc│Tab│Tab│Bsp│
      * ├───┼───┼───┼───┤
-     * │Num│---│---│---│
+     * │Sft│---│---│---│
      * ├───┼───┼───┼───┤
      * │---│---│---│   │
      * ├───┼───┼───┤---│
@@ -67,17 +73,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * │---    │ , │   │
      * └───────┴───┴───┘
      */
-    [2] = LAYOUT_numpad_6x4(
-        KC_ESC,  KC_TAB,  _BTAB,   KC_BSPC,
+    [_SHFT] = LAYOUT_numpad_6x4(
+        _RCK1,   KC_LBRC, KC_RBRC, KC_BSPC,
         _______, _______, _______, _______,
         _______, _______, _______,
         _______, _______, _______, _______,
         _______, _______, _______,
-        _______,          KC_COMM, KC_EQL
+        _______,          KC_COMM, _RCK2
     )
 };
 
-const uint16_t PROGMEM reset_combo[] = {KC_ESC, KC_EQL, COMBO_END};
+const uint16_t PROGMEM reset_combo[] = {_RCK1, _RCK2, COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(reset_combo, RESET)
 };
