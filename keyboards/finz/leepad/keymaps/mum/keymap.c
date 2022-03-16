@@ -1,8 +1,8 @@
 #include QMK_KEYBOARD_H
 
 #define SFT_NUM LT(2, KC_NUM)
-#define M1      UC(0x00E9)
-#define M2      XXXXXXX
+#define M1      KC_CALC
+#define M2      UC(0x00E9)
 #define M3      KC_DEL
 #define M4      KC_BSPC
 
@@ -24,7 +24,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [0] = LAYOUT_numpad_6x4(
         M1,      M2,      M3,      M4,
-        SFT_NUM, KC_PSLS, KC_PAST, KC_PMNS,
+        KC_NUM,  KC_PSLS, KC_PAST, KC_PMNS,
         KC_P7,   KC_P8,   KC_P9,
         KC_P4,   KC_P5,   KC_P6,   KC_PPLS,
         KC_P1,   KC_P2,   KC_P3,
@@ -80,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     )
 };
 
-const uint16_t PROGMEM reset_combo[] = {M1, KC_EQL, COMBO_END};
+const uint16_t PROGMEM reset_combo[] = {M1, KC_NUM, KC_EQL, COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
     COMBO(reset_combo, RESET)
 };
