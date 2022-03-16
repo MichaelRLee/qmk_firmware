@@ -3,10 +3,13 @@
 
 #pragma once
 
+#define BOOTMAGIC_LITE_ROW 0
+#define BOOTMAGIC_LITE_COLUMN 0
+#define COMBO_COUNT 1
+
+
 #define LOCKING_RESYNC_ENABLE
 #define LED_NUM_LOCK_PIN B5
-
-#define COMBO_COUNT 1
 
 /*
  * Feature disable options
