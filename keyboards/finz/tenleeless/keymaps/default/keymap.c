@@ -40,6 +40,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 const uint16_t PROGMEM enable_scs[] = {KC_LSFT, KC_RSFT, COMBO_END};
+const uint16_t PROGMEM enable_scs2[] = {KC_LSPO, KC_RSPC, COMBO_END};
+const uint16_t PROGMEM reset1[] = {KC_LSFT, KC_RSFT, KC_PAUSE, COMBO_END};
+const uint16_t PROGMEM reset2[] = {KC_LSPO, KC_RSPC, KC_PAUSE, COMBO_END};
 combo_t key_combos[COMBO_COUNT] = {
-    COMBO(enable_scs, TG(1))
+    COMBO(enable_scs, TG(1)),
+    COMBO(enable_scs2, TG(1)),
+    COMBO(reset1, RESET),
+    COMBO(reset2, RESET)
 };
