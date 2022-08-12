@@ -10,7 +10,6 @@
 #define LED_CAPS_LOCK_PIN C6
 #define LED_SCROLL_LOCK_PIN D6
 
-#define COMBO_COUNT 4
 /*
  * Feature disable options
  *  These options are also useful to firmware size reduction.

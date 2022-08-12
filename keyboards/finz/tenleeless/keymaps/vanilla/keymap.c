@@ -25,37 +25,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_CAPS, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,          KC_ENT,
         KC_LSFT,          KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,          KC_RSFT,             KC_UP,
         KC_LCTL, KC_LGUI, KC_LALT,                            KC_SPC,                                      KC_RALT, KC_RGUI, KC_RCTL,    KC_LEFT, KC_DOWN, KC_RGHT
-    ),
-
-    // Space Cadet Shift
-    [1] = LAYOUT_tkl_ansi(
-        _______,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,    _______, _______, _______,
-
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,    _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,    _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          _______,
-        KC_LSPO,          _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,          KC_RSPC,             _______,
-        _______, _______, _______,                   _______,                                              _______, _______, _______,    _______, _______, _______
     )
 };
 
 enum combos {
-    SCS1_COMBO,
-    SCS2_COMBO,
-    RESET1_COMBO,
-    RESET2_COMBO,
-    COMBO_LENGTH
+  RESET_COMBO,
+  COMBO_LENGTH
 };
 uint16_t COMBO_LEN = COMBO_LENGTH;
 
-const uint16_t PROGMEM enable_scs[] = {KC_LSFT, KC_RSFT, COMBO_END};
-const uint16_t PROGMEM enable_scs2[] = {KC_LSPO, KC_RSPC, COMBO_END};
 const uint16_t PROGMEM reset1[] = {KC_LSFT, KC_RSFT, KC_PAUSE, COMBO_END};
-const uint16_t PROGMEM reset2[] = {KC_LSPO, KC_RSPC, KC_PAUSE, COMBO_END};
 
 combo_t key_combos[] = {
-  [SCS1_COMBO] = COMBO(enable_scs, TG(1)),
-  [SCS2_COMBO] = COMBO(enable_scs2, TG(1)),
-  [RESET1_COMBO] = COMBO(reset1, RESET),
-  [RESET2_COMBO] = COMBO(reset2, RESET)
+  [RESET_COMBO] = COMBO(reset1, RESET),
 };
